@@ -46,11 +46,17 @@ services:
     build: ./frontend
     container_name: whale_frontend
     environment:
-      VITE_API_URL: http://localhost:${BACKEND_PORT}/api
+      PORT: ${FRONTEND_PORT}
+      VITE_API_URL: http://localhost:${BACKEND_PORT}/v1/api
+      VITE_CRYPTO_SYMBOLS: ${CRYPTO_SYMBOLS}
     ports:
-      - "${FRONTEND_PORT}:3000"
+      - "${FRONTEND_PORT}:${FRONTEND_PORT}"
     depends_on:
       - backend
+    develop:
+      watch:
+        - path: ./frontend/src
+          action: rebuild
 
 volumes:
   postgres_data:

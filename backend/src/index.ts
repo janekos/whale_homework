@@ -24,7 +24,9 @@ app.use(cors());
 app.use(express.json());
 app.use(limiter);
 
-app.use('/v1/api', priceRoutes);
+const apiV1 = express.Router();
+apiV1.use('/prices', priceRoutes);
+app.use('/v1/api', apiV1);
 
 app.get('/health', (req: express.Request, res: express.Response) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
