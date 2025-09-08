@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import UserList from './components/UserList';
+import UserList from './components/UserList.tsx';
 import UserForm from './components/UserForm';
 import { User, CreateUser } from './types/User';
 import { fetchUsers, createUser } from './services/userService';
