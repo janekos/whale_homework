@@ -8,7 +8,7 @@ Api only security measure is rate limiting to 100 requests per hour per IP.
 
 ### Setup
 
-Add your Coinmarketcap API key in the .env file in the root folder.
+Add your Coinmarketcap API key in the .env file in the root folder. Rename .env.example to .env if you don't have one.
 
 To run this project just call `docker-compose up --build` in the root directory and the frontend will be available at http://localhost:3002 and the backend at http://localhost:3001. Or set whatever ports you want in .env file.
 
