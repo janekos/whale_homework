@@ -13,10 +13,9 @@ yarn-debug.log*
 yarn-error.log*
 
 # Test files
-src/test
+src/__tests__
 **/*.test.ts
 **/*.test.tsx
 **/*.spec.ts
 **/*.spec.tsx
-vitest.config.ts
 jest.config.js

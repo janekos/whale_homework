@@ -41,6 +41,15 @@ const CurrencyConverter: React.FC = () => {
     setTimestamp(new Date().toISOString().slice(0, 16));
   };
 
+  const handleSwapCurrencies = () => {
+    const temp = currency1;
+    setCurrency1(currency2);
+    setCurrency2(temp);
+    
+    setResult(null);
+    setError(null);
+  };
+
   return (
     <div className="currency-converter">
       <form onSubmit={handleSubmit} className="converter-form">
@@ -57,6 +66,17 @@ const CurrencyConverter: React.FC = () => {
                 <option key={currency} value={currency}>{currency}</option>
               ))}
             </select>
+          </div>
+
+          <div className="swap-button-container">
+            <button 
+              type="button" 
+              onClick={handleSwapCurrencies}
+              className="btn-swap"
+              title="Swap currencies"
+            >
+              ⇄
+            </button>
           </div>
 
           <div className="form-group">
